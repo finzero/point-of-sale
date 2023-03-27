@@ -1,34 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { PropsWithChildren } from 'react';
+import { Cart } from './components/Cart';
+import { ProductList } from './components/ProductList';
+import { IProduct } from './models/application.model';
+
+const products: IProduct[] = [
+  { id: 1, name: 'Sushi sapi', price: 10000 },
+  { id: 2, name: 'Sushi ayam', price: 10000 },
+  { id: 3, name: 'Sushi bebek', price: 90000 },
+  { id: 4, name: 'Sushi Kambing', price: 15000 },
+  { id: 5, name: 'Sushi susanti', price: 365000 },
+  { id: 6, name: 'Sushi domba', price: 80000 },
+  { id: 7, name: 'Sushi kerbau', price: 80000 },
+  { id: 8, name: 'Sushi buaya', price: 80000 },
+  { id: 9, name: 'Sushi cacing', price: 80000 },
+  { id: 10, name: 'Sushi cicak', price: 80000 },
+  { id: 11, name: 'Sushi ular', price: 80000 },
+  { id: 12, name: 'Sushi tikus', price: 80000 },
+];
+
+const Layout = ({ children }: PropsWithChildren) => (
+  <div className="flex flex-row min-h-screen">{children}</div>
+);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Layout>
+      <ProductList products={products} />
+      <Cart />
+    </Layout>
+  );
 }
 
-export default App
+export default App;
