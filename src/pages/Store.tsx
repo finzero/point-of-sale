@@ -22,7 +22,7 @@ export const Store = () => {
     <>
       <main
         role="main"
-        className="mt-8 md:w-[calc(100vw-300px)] w-full p-4 bg-yellow-50"
+        className="md:w-[calc(100vw-300px)] w-full p-4 bg-yellow-50"
       >
         <ProductList products={products} />
       </main>
