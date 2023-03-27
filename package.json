@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "git push origin main"
   },
   "dependencies": {
     "@flaticon/flaticon-uicons": "^2.0.1",
