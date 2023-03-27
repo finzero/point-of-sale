@@ -19,7 +19,7 @@ const products: IProduct[] = [
 ];
 
 const Layout = ({ children }: PropsWithChildren) => (
-  <div className="flex flex-row min-h-screen">{children}</div>
+  <div className="relative flex flex-row min-h-screen">{children}</div>
 );
 
 function App() {

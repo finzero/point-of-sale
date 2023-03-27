@@ -5,11 +5,13 @@ export const ProductList = ({ products }: { products: IProduct[] }) => {
   return (
     <main
       role="main"
-      className="md:w-[calc(100vw-300px)] sm:w-full p-4 bg-yellow-50"
+      className="md:w-[calc(100vw-300px)] w-full p-4 bg-yellow-50"
     >
-      <div className="flex flex-row flex-wrap gap-2">
+      <div className="grid grid-cols-2 sm:grid-col-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-8 2xl:grid-cols-10 md:gap-1">
         {products.map((product) => (
-          <CardProduct key={product.id} product={product} />
+          <div className="mb-2" key={product.id}>
+            <CardProduct product={product} />
+          </div>
         ))}
       </div>
     </main>

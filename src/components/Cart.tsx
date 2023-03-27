@@ -16,8 +16,8 @@ export const Cart = () => {
   }, [items]);
 
   return (
-    <aside className="w-[300px] bg-orange-100 drop-shadow-lg hidden md:block max-h-screen overflow-auto">
-      <div className="sticky top-0 p-4 w-full">
+    <aside className="fixed top-0 right-0 w-[300px] bg-orange-100 drop-shadow-lg hidden md:block min-h-full overflow-auto">
+      <div className="p-4 w-full max-h-screen overflow-auto">
         <div className="relative h-10 w-full">
           <button
             type="button"
