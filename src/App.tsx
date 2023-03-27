@@ -1,7 +1,8 @@
-import { PropsWithChildren, ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Cart } from './components/Cart';
 import { ProductList } from './components/ProductList';
 import { IProduct } from './models/application.model';
+import { Navigation } from './components/Navigation';
 
 const products: IProduct[] = [
   { id: 1, name: 'Sushi sapi', price: 10000 },
@@ -26,8 +27,8 @@ interface LayoutProp {
 
 const Layout = ({ top, left, right }: LayoutProp) => (
   <div className="relative flex flex-row min-h-screen">
-    <nav className="w-full fixed top-0 left-0 h-8 bg-orange-500 drop-shadow-lg z-10">
-      this is navigation panel
+    <nav className="w-full fixed top-0 left-0 h-8 bg-orange-500 drop-shadow-lg z-10 py-2 px-5">
+      {top}
     </nav>
     <main
       role="main"
@@ -42,7 +43,13 @@ const Layout = ({ top, left, right }: LayoutProp) => (
 );
 
 function App() {
-  return <Layout left={<ProductList products={products} />} right={<Cart />} />;
+  return (
+    <Layout
+      top={<Navigation />}
+      left={<ProductList products={products} />}
+      right={<Cart />}
+    />
+  );
 }
 
 export default App;
