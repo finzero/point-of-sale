@@ -2,12 +2,7 @@ import { useEffect, useState } from 'react';
 import { ICartItem } from '../models/application.model';
 import { thousandSeparator } from '../utilities/formatter';
 import CartItem from './CartItem';
-import {
-  ICart,
-  useCartAction,
-  useCartItems,
-  useCartStore,
-} from '../store/cartStore';
+import { useCartAction, useCartItems } from '../store/cartStore';
 
 export const Cart = () => {
   const items = useCartItems();
@@ -23,13 +18,14 @@ export const Cart = () => {
 
   return (
     <div className="p-4 w-full max-h-screen overflow-auto">
-      <div className="relative h-10 w-full">
+      <div className="flex justify-between p-2 h-10 w-full mb-2">
+        <div className="text-black font-bold">Total Barang: {items.length}</div>
         <button
           type="button"
           onClick={clearCart}
-          className="text-white drop-shadow-lg bg-red-500 font-bold px-2 py-1 rounded-full absolute right-0"
+          className="text-white drop-shadow-lg bg-orange-700 font-bold px-2 py-1 rounded-md w-8 h-8 pt-2"
         >
-          Batal
+          <i className="fi fi-ss-trash"></i>
         </button>
       </div>
       <ul className="flex flex-col gap-2">
