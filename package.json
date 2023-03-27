@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@flaticon/flaticon-uicons": "^2.0.1",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
     "immer": "^9.0.19",
