@@ -1,11 +1,11 @@
 import { CartItemProps } from '../models/application.model';
 import { thousandSeparator } from '../utilities/formatter';
 import placeholder from '../assets/sushi.jpg';
-import { ICart, useCartStore } from '../store/cartStore';
+import { useCartAction } from '../store/cartStore';
 
 const CartItem = (props: CartItemProps) => {
   const { item } = props;
-  const { increaseQty, decreaseQty } = useCartStore((state: ICart) => state);
+  const { increaseQty, decreaseQty } = useCartAction();
   const imageSrc = item && item.image ? item.image : placeholder;
   const btnStyle = 'h-[20px] w-[20px] bg-orange-400 rounded shadow-md';
 

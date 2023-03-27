@@ -2,10 +2,16 @@ import { useEffect, useState } from 'react';
 import { ICartItem } from '../models/application.model';
 import { thousandSeparator } from '../utilities/formatter';
 import CartItem from './CartItem';
-import { ICart, useCartStore } from '../store/cartStore';
+import {
+  ICart,
+  useCartAction,
+  useCartItems,
+  useCartStore,
+} from '../store/cartStore';
 
 export const Cart = () => {
-  const { items, clearCart } = useCartStore((state: ICart) => state);
+  const items = useCartItems();
+  const { clearCart } = useCartAction();
   const [subtotal, setSubtotal] = useState(0);
 
   useEffect(() => {

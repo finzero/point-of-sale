@@ -1,11 +1,11 @@
 import { IProduct } from '../models/application.model';
 import { thousandSeparator } from '../utilities/formatter';
 import placeholder from '../assets/sushi.jpg';
-import { ICart, useCartStore } from '../store/cartStore';
+import { useCartAction } from '../store/cartStore';
 
 const CardProduct = (props: { product: IProduct }) => {
   const { product } = props;
-  const addToCart = useCartStore((state: ICart) => state.addToCart);
+  const { addToCart } = useCartAction();
 
   const imageSrc = product.image ? product.image : placeholder;
   return (
