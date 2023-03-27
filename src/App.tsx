@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, ReactElement } from 'react';
 import { Cart } from './components/Cart';
 import { ProductList } from './components/ProductList';
 import { IProduct } from './models/application.model';
@@ -18,17 +18,31 @@ const products: IProduct[] = [
   { id: 12, name: 'Sushi tikus', price: 80000 },
 ];
 
-const Layout = ({ children }: PropsWithChildren) => (
-  <div className="relative flex flex-row min-h-screen">{children}</div>
+interface LayoutProp {
+  top?: ReactElement;
+  right: ReactElement;
+  left: ReactElement;
+}
+
+const Layout = ({ top, left, right }: LayoutProp) => (
+  <div className="relative flex flex-row min-h-screen">
+    <nav className="w-full fixed top-0 left-0 h-8 bg-orange-500 drop-shadow-lg z-10">
+      this is navigation panel
+    </nav>
+    <main
+      role="main"
+      className="mt-8 md:w-[calc(100vw-300px)] w-full p-4 bg-yellow-50"
+    >
+      {left}
+    </main>
+    <aside className="fixed top-8 right-0 w-[300px] bg-orange-100 hidden md:block min-h-full overflow-auto">
+      {right}
+    </aside>
+  </div>
 );
 
 function App() {
-  return (
-    <Layout>
-      <ProductList products={products} />
-      <Cart />
-    </Layout>
-  );
+  return <Layout left={<ProductList products={products} />} right={<Cart />} />;
 }
 
 export default App;
