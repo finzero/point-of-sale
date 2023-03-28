@@ -3,6 +3,7 @@ import { ICartItem } from '../models/application.model';
 import { thousandSeparator } from '../utilities/formatter';
 import CartItem from './CartItem';
 import { useCartAction, useCartItems } from '../store/cartStore';
+import Button from './Button';
 
 export const Cart = () => {
   const items = useCartItems();
@@ -15,6 +16,10 @@ export const Cart = () => {
     }, 0);
     setSubtotal(total);
   }, [items]);
+
+  function bayar() {
+    alert(`Bayar`);
+  }
 
   return (
     <div className="p-4 w-full max-h-screen overflow-auto">
@@ -37,9 +42,7 @@ export const Cart = () => {
         <span>Subtotal:</span>
         <span>{thousandSeparator(subtotal)}</span>
       </div>
-      <button className="bg-orange-400 text-white px-4 py-2 rounded-full shadow-lg mt-2 w-full">
-        Bayar
-      </button>
+      <Button label="Bayar" click={bayar} disabled={items.length === 0} />
     </div>
   );
 };
