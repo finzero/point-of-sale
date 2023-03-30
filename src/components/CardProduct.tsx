@@ -11,10 +11,10 @@ const CardProduct = (props: { product: IProduct }) => {
   return (
     <div
       onClick={() => addToCart(product)}
-      className="flex flex-col m-auto items-center w-32 bg-white gap-2 p-2 rounded-lg shadow-lg cursor-pointer"
+      className="flex flex-col m-auto items-center h-40 w-32 bg-white gap-2 p-2 rounded-lg shadow-lg cursor-pointer"
     >
-      <div className="h-30 bg-white rounded flex justify-center shrink-0 overflow-hidden">
-        <img className="object-contain" src={imageSrc} alt="" />
+      <div className="w-full h-20 bg-white rounded flex justify-center shrink-0 overflow-hidden">
+        <img className="object-fill" src={imageSrc} alt="" />
       </div>
       <div className="flex flex-col text-sm">
         <div className="text-black text-ellipsis overflow-hidden">

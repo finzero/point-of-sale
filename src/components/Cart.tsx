@@ -50,7 +50,7 @@ export const Cart = () => {
   }
 
   return (
-    <div className="p-4 w-full max-h-screen overflow-auto">
+    <div className="p-4 w-full max-h-[calc(100vh-40px)] overflow-auto">
       <div className="flex justify-between p-2 h-10 w-full mb-2">
         <div className="text-black font-bold">Total Barang: {items.length}</div>
       </div>
