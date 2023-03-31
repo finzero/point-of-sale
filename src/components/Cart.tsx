@@ -5,6 +5,7 @@ import CartItem from './CartItem';
 import { useCartAction, useCartItems } from '../store/cartStore';
 import Button from './Button';
 import { PopupConfirm, PopupConfirmProps } from './PopupConfirm';
+import CartToggle from './CartToggle';
 
 const initialConfirmConfig = {
   show: false,
@@ -49,28 +50,40 @@ export const Cart = () => {
     setConfirmConfig({ ...initialConfirmConfig, show: false });
   }
 
+  const isSmallDevice = window.innerWidth <= 450;
+  const [showCart, setShowCart] = useState(!isSmallDevice);
+
+  function toggleCart() {
+    setShowCart((show) => !show);
+  }
+
   return (
-    <div className="p-4 w-full max-h-[calc(100vh-40px)] overflow-auto">
-      <div className="flex justify-between p-2 h-10 w-full mb-2">
-        <div className="text-black font-bold">Total Barang: {items.length}</div>
+    <div className="max-h-[calc(100vh-40px)] overflow-auto">
+      <CartToggle click={toggleCart} />
+      <div className={`${showCart ? 'w-[300px] p-4' : 'w-0'}`}>
+        <div className="flex justify-between p-2 h-10 w-full mb-2">
+          <div className="text-black font-bold">
+            Total Barang: {items.length}
+          </div>
+        </div>
+        <ul className="flex flex-col gap-2">
+          {items.map((item: ICartItem) => (
+            <CartItem item={item} key={item.id} />
+          ))}
+        </ul>
+        <div className="rounded-md bg-white p-4 mt-2 text-orange-400 font-bold flex justify-between">
+          <span>Subtotal:</span>
+          <span>{thousandSeparator(subtotal)}</span>
+        </div>
+        <Button label="Bayar" click={handlePay} disabled={!items.length} />
+        <Button
+          disabled={!items.length}
+          label="Batal"
+          click={cancelConfirmation}
+          style={{ bg: 'bg-red-500', color: 'text-white' }}
+        />
+        <PopupConfirm {...confirmConfig} />
       </div>
-      <ul className="flex flex-col gap-2">
-        {items.map((item: ICartItem) => (
-          <CartItem item={item} key={item.id} />
-        ))}
-      </ul>
-      <div className="rounded-md bg-white p-4 mt-2 text-orange-400 font-bold flex justify-between">
-        <span>Subtotal:</span>
-        <span>{thousandSeparator(subtotal)}</span>
-      </div>
-      <Button label="Bayar" click={handlePay} disabled={!items.length} />
-      <Button
-        disabled={!items.length}
-        label="Batal"
-        click={cancelConfirmation}
-        style={{ bg: 'bg-red-500', color: 'text-white' }}
-      />
-      <PopupConfirm {...confirmConfig} />
     </div>
   );
 };

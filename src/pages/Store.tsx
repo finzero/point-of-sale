@@ -11,7 +11,7 @@ export const Store = () => {
       >
         <ProductList products={products.data} />
       </main>
-      <aside className="fixed top-8 right-0 w-[300px] bg-orange-100 hidden md:block min-h-full overflow-auto">
+      <aside className="fixed top-8 right-0 bg-orange-100 md:block min-h-full">
         <Cart />
       </aside>
     </>

@@ -1,66 +1,6 @@
 {
   "data": [
     {
-      "id": 1,
-      "name": "Lotek",
-      "price": 9000,
-      "image": "https://asset.kompas.com/crops/FwUi6NPgap6goby-TRtK4gMgnpE=/0x0:1000x667/750x500/data/photo/2021/09/09/613992c80e500.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Kupat Tahu",
-      "price": 12000,
-      "image": "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/06/09/resep-kupat-tahu-menu-sarapan-n-20210609032448.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Sate Ayam",
-      "price": 20000,
-      "image": "https://img.okezone.com/content/2020/05/06/298/2210084/kangen-makan-sate-ayam-khas-madura-langganan-bikin-yuk-di-rumah-aja-LVgRstfFTX.jpg"
-    },
-    {
-      "id": 4,
-      "name": "Baso Tahu",
-      "price": 20000,
-      "image": "https://www.nibble.id/uploads/siomay_enak_di_bandung_02_c0c0aa8e84.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Batagor",
-      "price": 365000,
-      "image": "https://www.masakapahariini.com/wp-content/uploads/2020/11/batagor-bandung-disajikan-500x300.jpg"
-    },
-    {
-      "id": 6,
-      "name": "Chicken Katsu",
-      "price": 35000,
-      "image": "https://img-global.cpcdn.com/recipes/b51561ce4711d66a/400x400cq70/photo.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Chicken Cordon Bleu",
-      "price": 40000,
-      "image": "https://img.okezone.com/okz/500/library/images/2021/02/02/3s9vq7n6jqbaxqp2dbdo_12019.jpg"
-    },
-    {
-      "id": 8,
-      "name": "Beef Teriyaki",
-      "price": 42000,
-      "image": "https://slowcookermeals.com/wp-content/uploads/2022/10/Slow-Cooker-Teriyaki-Beef-5.jpg"
-    },
-    {
-      "id": 9,
-      "name": "Fried Chicken",
-      "price": 5000,
-      "image": "https://kbu-cdn.com/dk/wp-content/uploads/curcuma-fried-chicken.jpg"
-    },
-    {
-      "id": 10,
-      "name": "French Fries",
-      "price": 20000,
-      "image": "https://images.themodernproper.com/billowy-turkey/production/posts/2022/Homemade-French-Fries_8.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1662474181&s=f6b09b96f732330eca2aae43140b3ffa"
-    },
-    {
       "id": 11,
       "name": "Goyobod",
       "price": 7500,
@@ -119,6 +59,66 @@
       "name": "Cincau Gula Merah Susu",
       "price": 16000,
       "image": "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024/https://www.ruparupa.com/blog/wp-content/uploads/2021/12/Cincau-Gula-Merah-Susu.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Lotek",
+      "price": 9000,
+      "image": "https://asset.kompas.com/crops/FwUi6NPgap6goby-TRtK4gMgnpE=/0x0:1000x667/750x500/data/photo/2021/09/09/613992c80e500.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Kupat Tahu",
+      "price": 12000,
+      "image": "https://asset-a.grid.id/crop/0x0:0x0/x/photo/2021/06/09/resep-kupat-tahu-menu-sarapan-n-20210609032448.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Sate Ayam",
+      "price": 20000,
+      "image": "https://img.okezone.com/content/2020/05/06/298/2210084/kangen-makan-sate-ayam-khas-madura-langganan-bikin-yuk-di-rumah-aja-LVgRstfFTX.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Baso Tahu",
+      "price": 20000,
+      "image": "https://www.nibble.id/uploads/siomay_enak_di_bandung_02_c0c0aa8e84.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Batagor",
+      "price": 365000,
+      "image": "https://www.masakapahariini.com/wp-content/uploads/2020/11/batagor-bandung-disajikan-500x300.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Chicken Katsu",
+      "price": 35000,
+      "image": "https://img-global.cpcdn.com/recipes/b51561ce4711d66a/400x400cq70/photo.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Chicken Cordon Bleu",
+      "price": 40000,
+      "image": "https://img.okezone.com/okz/500/library/images/2021/02/02/3s9vq7n6jqbaxqp2dbdo_12019.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Beef Teriyaki",
+      "price": 42000,
+      "image": "https://slowcookermeals.com/wp-content/uploads/2022/10/Slow-Cooker-Teriyaki-Beef-5.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Fried Chicken",
+      "price": 5000,
+      "image": "https://kbu-cdn.com/dk/wp-content/uploads/curcuma-fried-chicken.jpg"
+    },
+    {
+      "id": 10,
+      "name": "French Fries",
+      "price": 20000,
+      "image": "https://images.themodernproper.com/billowy-turkey/production/posts/2022/Homemade-French-Fries_8.jpg?w=960&h=960&q=82&fm=jpg&fit=crop&dm=1662474181&s=f6b09b96f732330eca2aae43140b3ffa"
     }
   ]
 }
