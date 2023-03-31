@@ -29,7 +29,15 @@ export const Cart = () => {
     setSubtotal(total);
   }, [items]);
 
-  function handlePay() {}
+  function handlePay() {
+    setConfirmConfig({
+      show: true,
+      title: 'Informasi',
+      description: 'Maaf Blom Bisa Bayar, blom ready fitur-nya',
+      confirm: closeModal,
+      cancel: closeModal,
+    });
+  }
 
   function cancelConfirmation() {
     setConfirmConfig({
