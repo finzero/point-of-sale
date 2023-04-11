@@ -52,13 +52,15 @@ export const Cart = ({ handlePay, handleCancel }: CartProps) => {
             <span>Subtotal:</span>
             <span>{thousandSeparator(subtotal)}</span>
           </div>
-          <Button label="Bayar" click={handlePay} disabled={!items.length} />
-          <Button
-            disabled={!items.length}
-            label="Batal"
-            click={handleCancel}
-            style={{ bg: 'bg-red-500', color: 'text-white' }}
-          />
+          <div className="flex gap-1 ">
+            <Button label="Bayar" click={handlePay} disabled={!items.length} />
+            <Button
+              disabled={!items.length}
+              label="Batal"
+              click={handleCancel}
+              style={{ bg: 'bg-red-500', color: 'text-white' }}
+            />
+          </div>
         </div>
       </div>
     </div>
