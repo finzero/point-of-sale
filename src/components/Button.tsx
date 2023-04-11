@@ -19,7 +19,7 @@ const Button = ({ label, click, disabled, style }: ButtonProps) => {
   }
   return (
     <button
-      className={`${bgColor} ${color} font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-full`}
+      className={`${bgColor} ${color} font-bold px-4 py-2 rounded-lg shadow-lg mt-2 w-full`}
       onClick={click}
     >
       {label}
