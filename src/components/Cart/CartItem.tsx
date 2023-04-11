@@ -1,7 +1,7 @@
-import { CartItemProps } from '../models/application.model';
-import { thousandSeparator } from '../utilities/formatter';
-import placeholder from '../assets/sushi.jpg';
-import { useCartAction } from '../store/cartStore';
+import { CartItemProps } from '../../models/application.model';
+import { thousandSeparator } from '../../utilities/formatter';
+import placeholder from '../../assets/sushi.jpg';
+import { useCartAction } from '../../store/cartStore';
 
 const CartItem = (props: CartItemProps) => {
   const { item } = props;

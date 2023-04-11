@@ -1,7 +1,7 @@
-import { IProduct } from '../models/application.model';
-import { thousandSeparator } from '../utilities/formatter';
-import placeholder from '../assets/sushi.jpg';
-import { useCartAction } from '../store/cartStore';
+import placeholder from '../../assets/sushi.jpg';
+import { IProduct } from '../../models/application.model';
+import { useCartAction } from '../../store/cartStore';
+import { thousandSeparator } from '../../utilities/formatter';
 
 const CardProduct = (props: { product: IProduct }) => {
   const { product } = props;

@@ -1,5 +1,5 @@
-import { Cart } from '../components/Cart';
-import { ProductList } from '../components/ProductList';
+import { Cart } from '../components/Cart/Cart';
+import { ProductList } from '../components/Product/ProductList';
 import products from '../assets/json/products.json';
 import { useState } from 'react';
 import { PopupConfirm, PopupConfirmProps } from '../components/PopupConfirm';

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { IProduct } from '../models/application.model';
+import { IProduct } from '../../models/application.model';
 import CardProduct from './CardProduct';
-import { SearchInput } from './SearchInput';
+import { SearchInput } from '../SearchInput';
 
 export const ProductList = ({ products }: { products: IProduct[] }) => {
   // temporary search until API Ready

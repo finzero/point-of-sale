@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { ICartItem } from '../models/application.model';
-import { thousandSeparator } from '../utilities/formatter';
-import CartItem from './CartItem';
-import { useCartItems } from '../store/cartStore';
-import Button from './Button';
-import CartToggle from './CartToggle';
+import { ICartItem } from '../../models/application.model';
+import CartItem from '../Cart/CartItem';
+import { useCartItems } from '../../store/cartStore';
+import Button from '../Button';
+import CartToggle from '../Cart/CartToggle';
+import { thousandSeparator } from '../../utilities/formatter';
 
 interface CartProps {
   handlePay: () => void;

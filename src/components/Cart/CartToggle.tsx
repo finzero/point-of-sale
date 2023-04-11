@@ -1,4 +1,4 @@
-import { useCartItems } from '../store/cartStore';
+import { useCartItems } from '../../store/cartStore';
 
 interface CartToggleProps {
   click: () => void;
