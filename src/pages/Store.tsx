@@ -52,7 +52,7 @@ export const Store = () => {
     <>
       <main
         role="main"
-        className="md:w-[calc(100vw-300px)] w-full p-4 bg-yellow-50 min-h-full"
+        className="md:w-[calc(100vw-300px)] w-full px-4 py-4 bg-yellow-50 min-h-full"
       >
         <ProductList products={products.data} />
       </main>
