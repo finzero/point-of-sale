@@ -13,7 +13,7 @@ const initialConfirmConfig = {
   cancel: () => {},
 };
 
-export const Store = () => {
+const Store = () => {
   const [confirmConfig, setConfirmConfig] =
     useState<PopupConfirmProps>(initialConfirmConfig);
 
@@ -63,3 +63,5 @@ export const Store = () => {
     </>
   );
 };
+
+export default Store;
