@@ -26,7 +26,7 @@ const Login = () => {
   }
 
   return (
-    <div className="h-screen bg-gradient-to-b from-white to-orange-400">
+    <div className="layout bg-gradient-to-b from-white to-orange-400">
       <div
         className="absolute left-0 bottom-0 w-screen overflow-hidden leading-none h-[123px]"
         style={{ backgroundImage: `url(${bgImage})` }}

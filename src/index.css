@@ -25,3 +25,9 @@ body {
   color: #e2e2e2;
 }
 
+.layout {
+  min-height: 100vh;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: stretch;
+}
