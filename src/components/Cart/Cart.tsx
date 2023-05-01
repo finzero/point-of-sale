@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { ICartItem } from '../../models/application.model';
 import CartItem from '../Cart/CartItem';
 import { useCartItems } from '../../store/cartStore';
@@ -15,6 +15,20 @@ export const Cart = ({ handlePay, handleCancel }: CartProps) => {
   const items = useCartItems();
   const [subtotal, setSubtotal] = useState<number>(0);
 
+  // always show cart when window width > 425px
+  useLayoutEffect(() => {
+    function windowSizeListener() {
+      const width = window.innerWidth;
+      if (width > 425) {
+        setShowCart(true);
+      }
+    }
+    window.addEventListener('resize', windowSizeListener);
+    windowSizeListener();
+    return () => window.removeEventListener('resize', windowSizeListener);
+  }, []);
+
+  // calculate subtotal on cart item change
   useEffect(() => {
     const total = items.reduce((p, n) => {
       return p + n.price * n.quantity;
