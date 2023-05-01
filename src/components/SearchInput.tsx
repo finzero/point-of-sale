@@ -1,15 +1,32 @@
-interface SearchInputProps {
-  onChange: (term: string) => void;
+import { useRef } from 'react';
+
+interface ISearchInputProps {
+  onKeyup: (e: React.KeyboardEvent) => void;
+  onClear: () => void;
 }
-const SearchInput = () => {
+const SearchInput = (props: ISearchInputProps) => {
+  const inputRef = useRef<HTMLInputElement>(null);
+  function handleClear() {
+    const el = inputRef.current as HTMLInputElement;
+    el.value = '';
+    props.onClear();
+  }
+
   return (
-    <input
-      type="text"
-      name="search"
-      id="search"
-      className="w-72 rounded-sm text-orange-500 italic shadow-inner h-8 p-2 border-2 border-orange-200 focus:outline-none"
-      placeholder="Cari Produk"
-    />
+    <div className="flex justify-start gap-2 mx-6 rounded-lg my-2 text-black bg-slate-50 drop-shadow-xl">
+      <input
+        ref={inputRef}
+        type="text"
+        name="search"
+        placeholder="search item"
+        onKeyUp={(e) => props.onKeyup(e)}
+        id="search"
+        className="h-10 w-full px-2 py-1 text-slate-500 italic rounded-lg"
+      />
+      <span className="absolute top-3 right-2" onClick={handleClear}>
+        <i className="fi fi-ss-cross text-slate-400 text-xs cursor-pointer"></i>
+      </span>
+    </div>
   );
 };
 
