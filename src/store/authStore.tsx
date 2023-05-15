@@ -7,7 +7,7 @@ interface IAuth {
 
 interface IAuthActions {
   login: (auth: IAuth) => void;
-  logout?: () => void;
+  logout: () => void;
 }
 
 // set actions outside instead of inside actions object, coz persist caused selected return undefined
