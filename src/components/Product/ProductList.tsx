@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { IProduct } from '../../models/application.model';
 import CardProduct from './CardProduct';
-import SearchInput from '../SearchInput';
 
 export const ProductList = ({ products }: { products: IProduct[] }) => {
   const [term, setTerm] = useState('');
@@ -16,7 +15,6 @@ export const ProductList = ({ products }: { products: IProduct[] }) => {
 
   return (
     <>
-      <SearchInput onKeyup={(e) => handleSearch(e)} onClear={handleClear} />
       <div className="grid grid-cols-2 sm:grid-col-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-8 2xl:grid-cols-10 md:gap-1">
         {products
           .filter(
