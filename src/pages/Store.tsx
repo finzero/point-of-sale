@@ -1,7 +1,7 @@
 import { Cart } from '../components/Cart/Cart';
 import { ProductList } from '../components/Product/ProductList';
 import products from '../assets/json/products.json';
-import { PopupConfirm } from '../components/PopupConfirm';
+import { PopupConfirm } from '../components/UI/PopupConfirm';
 import useCart from '../hooks/useCart';
 
 const Store = () => {

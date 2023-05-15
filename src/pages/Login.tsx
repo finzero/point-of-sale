@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Button from '../components/Button';
-import Input from '../components/Input';
+import Button from '../components/UI/Button';
+import Input from '../components/UI/Input';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import bgImage from '../assets/wave.svg';

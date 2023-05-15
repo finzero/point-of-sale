@@ -1,14 +1,26 @@
+import { useEffect, useState } from 'react';
 import { useCartItems } from '../../store/cartStore';
 
-interface CartToggleProps {
+interface ICartToggleProps {
   click: () => void;
 }
-const CartToggle = ({ click }: CartToggleProps) => {
+const CartToggle = ({ click }: ICartToggleProps) => {
   const items = useCartItems();
+  const [animateClass, setAnimateClass] = useState('');
+
+  useEffect(() => {
+    // set brief animation when items change
+    if (items.length) {
+      setAnimateClass('animate-bounce');
+      setTimeout(() => {
+        setAnimateClass('');
+      }, 500);
+    }
+  }, [items]);
 
   return (
     <div
-      className="md:hidden cursor-pointer absolute top-6 -left-9 h-10 w-10 rounded-l-xl bg-orange-300 drop-shadow-lg flex justify-center items-center"
+      className={`${animateClass} md:hidden cursor-pointer absolute top-6 -left-9 h-10 w-10 rounded-l-xl bg-orange-300 drop-shadow-lg flex justify-center items-center`}
       onClick={click}
     >
       <i className="text-white fi fi-ss-shopping-cart text-lg"></i>

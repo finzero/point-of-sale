@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { ICartItem } from '../../models/application.model';
 import CartItem from '../Cart/CartItem';
 import { useCartItems } from '../../store/cartStore';
-import Button from '../Button';
+import Button from '../UI/Button';
 import CartToggle from '../Cart/CartToggle';
 import { thousandSeparator } from '../../utilities/formatter';
 

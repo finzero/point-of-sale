@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { IPopupConfirmProps } from '../components/PopupConfirm';
+import { IPopupConfirmProps } from '../components/UI/PopupConfirm';
 import { useCartAction } from '../store/cartStore';
 
 const initialConfirmConfig = {
