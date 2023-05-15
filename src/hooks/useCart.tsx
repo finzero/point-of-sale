@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { PopupConfirmProps } from '../components/PopupConfirm';
+import { useState } from 'react';
+import { IPopupConfirmProps } from '../components/PopupConfirm';
 import { useCartAction } from '../store/cartStore';
 
 const initialConfirmConfig = {
@@ -12,12 +12,12 @@ const initialConfirmConfig = {
 
 const useCart = () => {
   const [confirmConfig, setConfirmConfig] =
-    useState<PopupConfirmProps>(initialConfirmConfig);
+    useState<IPopupConfirmProps>(initialConfirmConfig);
 
   function handlePay() {
     setConfirmConfig({
       show: true,
-      title: 'Informasi',
+      title: 'Payment',
       description: 'Payment feature is on progress',
       confirm: closeModal,
       cancel: closeModal,
@@ -27,8 +27,8 @@ const useCart = () => {
   function handleCancel() {
     setConfirmConfig({
       show: true,
-      title: 'Konfirmasi Pembatalan',
-      description: 'Anda ingin membatalkan Pesanan',
+      title: 'Order Cancel',
+      description: 'Cancel Order ?',
       confirm: handleClearCart,
       cancel: closeModal,
     });

@@ -54,7 +54,7 @@ export const Cart = ({ handlePay, handleCancel }: CartProps) => {
         <div className="w-[300px] p-4">
           <div className="flex justify-between p-2 h-10 w-full mb-2">
             <div className="text-black font-bold">
-              Total Barang: {items.length}
+              Total Items: {items.length}
             </div>
           </div>
           <ul className="flex flex-col gap-2">
@@ -67,10 +67,14 @@ export const Cart = ({ handlePay, handleCancel }: CartProps) => {
             <span>{thousandSeparator(subtotal)}</span>
           </div>
           <div className="flex gap-1 ">
-            <Button label="Bayar" click={handlePay} disabled={!items.length} />
+            <Button
+              label="Payment"
+              click={handlePay}
+              disabled={!items.length}
+            />
             <Button
               disabled={!items.length}
-              label="Batal"
+              label="Cancel"
               click={handleCancel}
               style={{ bg: 'bg-red-500', color: 'text-white' }}
             />

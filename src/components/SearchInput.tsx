@@ -23,8 +23,11 @@ const SearchInput = (props: ISearchInputProps) => {
         id="search"
         className="h-10 w-full px-2 py-1 text-slate-500 italic rounded-lg"
       />
-      <span className="absolute top-3 right-2" onClick={handleClear}>
-        <i className="fi fi-ss-cross text-slate-400 text-xs cursor-pointer"></i>
+      <span
+        className="flex items-center mr-2 cursor-pointer"
+        onClick={handleClear}
+      >
+        <i className="fi fi-ss-cross text-slate-400 text-xs"></i>
       </span>
     </div>
   );
