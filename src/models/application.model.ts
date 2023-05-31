@@ -12,3 +12,9 @@ export interface ICartItem extends IProduct {
 export interface CartItemProps {
   item: ICartItem;
 }
+
+export interface IProductFilterProps {
+  setShowSearch: (state: boolean) => void;
+  filter: string;
+  setFilter: (term: string) => void;
+}
