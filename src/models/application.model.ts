@@ -18,3 +18,8 @@ export interface IProductFilterProps {
   filter: string;
   setFilter: (term: string) => void;
 }
+
+export interface IProductListProps {
+  products: IProduct[];
+  filter: string;
+}
