@@ -1,34 +1,53 @@
-import { useRef } from 'react';
+import { KeyboardEvent, useEffect, useRef } from 'react';
+import Button from './Button';
 
 interface ISearchInputProps {
-  onKeyup: (e: React.KeyboardEvent) => void;
-  onClear: () => void;
+  onSearch: (term: string) => void;
+  toggleSearch: boolean;
+  // onClear: () => void;
 }
 const SearchInput = (props: ISearchInputProps) => {
+  const { toggleSearch, onSearch } = props;
   const inputRef = useRef<HTMLInputElement>(null);
-  function handleClear() {
-    const el = inputRef.current as HTMLInputElement;
-    el.value = '';
-    props.onClear();
+
+  useEffect(() => {
+    // focus on input search whenever input form is displayed
+    if (toggleSearch) {
+      inputRef.current?.focus();
+    }
+  }, [toggleSearch]);
+
+  function handleSearch() {
+    const searchVal = inputRef.current?.value;
+    onSearch(searchVal || '');
+    if (inputRef.current) {
+      inputRef.current.value = '';
+    }
+  }
+
+  function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
+    const isEnter = e.code === 'Enter';
+    if (isEnter) {
+      handleSearch();
+    }
   }
 
   return (
-    <div className="flex justify-start gap-2 mx-6 rounded-lg my-2 text-black bg-slate-50 drop-shadow-xl">
+    <div
+      className={`${
+        toggleSearch ? '' : 'hidden'
+      } w-screen h-screen fixed top-0 left-0 bg-slate-800/80 flex flex-col items-center justify-center`}
+    >
       <input
         ref={inputRef}
         type="text"
-        name="search"
-        placeholder="search item"
-        onKeyUp={(e) => props.onKeyup(e)}
-        id="search"
-        className="h-10 w-full px-2 py-1 text-slate-500 italic rounded-lg"
+        placeholder="Search"
+        className="bg-transparent text-white italic text-xl border-b-2 border-b-white w-4/5 focus:outline-none"
+        onKeyDown={(e) => handleKeyDown(e)}
       />
-      <span
-        className="flex items-center mr-2 cursor-pointer"
-        onClick={handleClear}
-      >
-        <i className="fi fi-ss-cross text-slate-400 text-xs"></i>
-      </span>
+      <div className="h-20">
+        <Button label="Search" click={handleSearch} />
+      </div>
     </div>
   );
 };
